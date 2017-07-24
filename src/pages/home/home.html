@@ -1,17 +1,60 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Order Page</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-item-group>
+      <ion-list>
+      <ion-item-divider color="dark" > Specialty (swipe right for options)</ion-item-divider>
+       <ion-item-sliding>
+           <ion-item>House Milk Tea</ion-item>
+           <ion-item-options side="right" >
+               <button ion-button color="primary">
+                  Black 
+               </button>
+               <button ion-button color="secondary">
+                   Jasmine 
+               </button>
+               <button ion-button color="light">
+                   Oolong 
+               </button>
+           </ion-item-options>
+       </ion-item-sliding>
+       <ion-item-sliding>
+           <ion-item>Flavor Milk Tea</ion-item>
+           <ion-item-options side="right" >
+               <button ion-button color="primary">
+                  Black 
+               </button>
+               <button ion-button color="secondary">
+                   Jasmine 
+               </button>
+               <button ion-button color="light">
+                   Oolong 
+               </button>
+           </ion-item-options>
+       </ion-item-sliding>
+       <ion-item-sliding>
+           <ion-item>Tea Float</ion-item>
+           <ion-item-options side="right" >
+               <button ion-button color="primary">
+                  Black 
+               </button>
+               <button ion-button color="secondary">
+                   Jasmine 
+               </button>
+               <button ion-button color="light">
+                   Oolong 
+               </button>
+           </ion-item-options>
+       </ion-item-sliding>
+      </ion-list>
+
+      <ion-item-divider color="light" >Milk Tea</ion-item-divider>
+  
+      <ion-item *ngFor="let item of menu | async">{{ item.$value }}</ion-item>
+   </ion-item-group>
 </ion-content>
